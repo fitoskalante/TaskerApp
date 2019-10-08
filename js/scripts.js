@@ -1,6 +1,6 @@
 const applicationState = {
   username: "anonymous",
-  todos: [{ text: "Make app", date: new Date(), isDone: true }]
+  todos: [{ text: "Make app", date: new Date(), isDone: true }, ]
 };
 
 function updateState(key, value) {
@@ -18,6 +18,11 @@ if (localStorage.length === 0) {
   localStorage.setItem("applicationState", JSON.stringify(applicationState));
 }
 
+window.onload = function() {
+  document.getElementById("username").innerHTML = getData("username");
+//   document.getElementById('data').innerHTML = getData('todos');
+};
+
 let todoList = [
   { text: "Make app", date: new Date(), isDone: true },
   { text: "Make app work", date: new Date(), isDone: true },
@@ -25,17 +30,13 @@ let todoList = [
   { text: "Make app work well beautifully", date: new Date(), isDone: false }
 ];
 
-let doneList = [];
-
-let activeList = [];
-
 function addTodo() {
   let todo = document.getElementById("todo").value;
-  console.log(todo);
   if (todo === "") {
   } else {
     todoList.push({ text: todo, date: new Date(), isDone: false });
     renderTodos(todoList);
+    // updateState("todos", todoList.todo)
     document.getElementById("todo").value = "";
   }
 }
@@ -66,24 +67,24 @@ function renderTodos(todos) {
       <i onclick=removeTodo(${i}) class="ml-auto far fa-trash-alt"></i></li>`;
     })
     .join("");
-    console.log(todos)
-    updateState('todos', todos )
+  updateState("todos", todos);
   document.getElementById("list").innerHTML = html;
 }
 
-function filterDone(todos) {
+function filterDone() {
   const doneTodoList = todoList.filter(todos => todos.isDone === true);
   renderTodos(doneTodoList);
 }
 
-function filterUndone(todos) {
+function filterUndone() {
   const undoneTodoList = todoList.filter(todos => todos.isDone === false);
   renderTodos(undoneTodoList);
 }
 
 function login() {
   let val = document.getElementById("login").value;
-  updateState("username", val)
+  updateState("username", val);
+  document.getElementById("username").innerHTML = getData("username");
   return val;
 }
 

@@ -19,16 +19,33 @@
   </head>
 
   <body>
-     <h1>Tasker.io</h1>
-    <!-- <input id="login">
-    <button onclick="login()">Sign in</button>  -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Tasker.io</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <button class="btn btn-success"> Login</button>
+                    <button class="btn btn-outline-secondary"> Sign up</button>
+                  </div>
+                </div>
+              </nav>
+
+     <input id="login">
+     <button onclick="login()">Sign in</button> 
+     <div id="username">Username</div>
     <div class="main-container container d-flex justify-content-center flex-column align-content-center align-items-center col-12 col-md-10 col-lg-6">
         
         <div class="top-container container-fluid d-flex justify-content-center">
                 <form onsubmit="submitFn(this, event);">
                         <div class="search-wrapper">
                             <div class="input-holder">
-                                <input type="text" id="todo" class="search-input" placeholder="hmmm what to do...?" />
+                                <input type="text" id="todo" class="search-input" placeholder="What to do...?" />
                                 <button class="search-icon"  onclick="searchToggle(this, event); addTodo()"><span><i class="fas fa-plus"></i></span></button>
                             </div>
                             <span class="close" onclick="searchToggle(this, event);"></span>
@@ -59,6 +76,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    
     <script src="js/scripts.js"></script>
 
   </body>

@@ -30,19 +30,20 @@
                     <a class="nav-item nav-link" href="#">Features</a>
                     <a class="nav-item nav-link" href="#">Pricing</a>
                     <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <div id="username">Username</div>
                     <button class="btn btn-success"> Login</button>
                     <button class="btn btn-outline-secondary"> Sign up</button>
                   </div>
                 </div>
               </nav>
 
-     <input id="login">
-     <button onclick="login()">Sign in</button> 
-     <div id="username">Username</div>
     <div class="main-container container d-flex justify-content-center flex-column align-content-center align-items-center col-12 col-md-10 col-lg-6">
         
         <div class="top-container container-fluid d-flex justify-content-center">
-                <form onsubmit="submitFn(this, event);">
+                <input type="text" id="todo" class="search-input" placeholder="What to do...?" />
+                <button class="search-icon"  onclick="searchToggle(this, event); addTodo()"><span><i class="fas fa-plus"></i></span></button>
+
+            <!-- <form onsubmit="submitFn(this, event);">
                         <div class="search-wrapper">
                             <div class="input-holder">
                                 <input type="text" id="todo" class="search-input" placeholder="What to do...?" />
@@ -51,7 +52,7 @@
                             <span class="close" onclick="searchToggle(this, event);"></span>
                             <div class="result-container"></div>
                         </div>
-                </form>
+                </form> -->
         </div>
         <div class="filter-container d-flex flex-row ">
           <button class="btn-filter btn btn-secondary ml-3" style="width: 90px;" onclick="renderTodos(todoList)">All</button>

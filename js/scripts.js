@@ -18,10 +18,10 @@ if (localStorage.length === 0) {
   localStorage.setItem("applicationState", JSON.stringify(applicationState));
 }
 
-window.onload = function() {
-  document.getElementById("username").innerHTML = getData("username");
-//   document.getElementById('data').innerHTML = getData('todos');
-};
+// window.onload = function() {
+//   document.getElementById("username").innerHTML = getData("username");
+// //   document.getElementById('data').innerHTML = getData('todos');
+// };
 
 let todoList = [
   { text: "Make app", date: new Date(), isDone: true },

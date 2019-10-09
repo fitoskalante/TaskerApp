@@ -1,6 +1,6 @@
 const applicationState = {
   username: "anonymous",
-  todos: [{ text: "Make app", date: new Date(), isDone: true }, ]
+  todos: [{ text: "Make app", date: new Date(), isDone: true }]
 };
 
 function updateState(key, value) {
@@ -18,10 +18,10 @@ if (localStorage.length === 0) {
   localStorage.setItem("applicationState", JSON.stringify(applicationState));
 }
 
-// window.onload = function() {
-//   document.getElementById("username").innerHTML = getData("username");
-// //   document.getElementById('data').innerHTML = getData('todos');
-// };
+window.onload = function() {
+  document.getElementById("username").innerHTML = getData("username");
+  //   document.getElementById('data').innerHTML = getData('todos');
+};
 
 let todoList = [
   { text: "Make app", date: new Date(), isDone: true },
@@ -34,7 +34,7 @@ function addTodo() {
   let todo = document.getElementById("todo").value;
   if (todo === "") {
   } else {
-    todoList.push({ text: todo, date: new Date(), isDone: false });
+    todoList.unshift({ text: todo, date: new Date(), isDone: false });
     renderTodos(todoList);
     // updateState("todos", todoList.todo)
     document.getElementById("todo").value = "";
@@ -51,14 +51,18 @@ function toggleTodos(index) {
   renderTodos(todoList);
 }
 
+$(".form-wrapper").submit(function(e) {
+  e.preventDefault();
+});
+
 function renderTodos(todos) {
   const html = todos
     .map((todo, i) => {
       return `<li class="container-fluid d-flex align-items-center text-left ${
         todo.isDone ? "done" : "undone"
       }"> 
-      <label class="checkbox">
-            <input id="checkbox" onclick="toggleTodos(${i})" type="checkbox" ${
+      <label id="checkbox">
+            <input onclick="toggleTodos(${i})" type="checkbox" ${
         todo.isDone ? "checked" : ""
       }/>
             <span class="default"></span>

@@ -8,6 +8,7 @@ This was a pair project to design the worlds most amazing todo app 📱 .
 - [x] The user can add a todo item to the list.
 - [x] The user can remove a todo item.
 - [x] The user can complete todos.
+- [x] User can see a list of all todos.
 - [x] User can see a list of all completed todos.
 - [x] User can see a list of todos that are active and still need to be completed.
 

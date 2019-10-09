@@ -13,7 +13,7 @@ This was a pair project to design the worlds most amazing todo app 📱 .
 
 ### Learning Objectives ✍️📚📝 ️
 
-1. Learn how to build programs in a functional style [Read more detail on funct programming](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0).
+1. Learn how to build programs in a functional style [Read more detail on functional programming](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0).
 
 
    - Recognize how to pass functions to other functions.

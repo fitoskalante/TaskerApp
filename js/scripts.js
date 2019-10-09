@@ -55,10 +55,6 @@ $(".form-wrapper").submit(function(e) {
   e.preventDefault();
 });
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-    document.getElementById("active").focus();
- });
-
 function renderTodos(todos) {
   const html = todos
     .map((todo, i) => {
